@@ -1,0 +1,16 @@
+UnityPackageManager/
+node_modules/
+JetBrains/
+.DS_Store
+*.csproj
+Library/
+.idea/
+*.sln
+Temp/
+.upm/
+Builds/
+build/
+obj/
+Assets/Amplitude/
+package-lock\.json
+*node_modules.meta
