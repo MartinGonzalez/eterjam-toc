@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Grid : MonoBehaviour {
+public class GridGenerator : MonoBehaviour {
     public float spaceX = 1.2f;
     public float spaceY = 1.2f;
     public int tilesX = 10;

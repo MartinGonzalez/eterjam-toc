@@ -1,13 +1,13 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(Grid))]
+[CustomEditor(typeof(GridGenerator))]
 public class CustomGrid : Editor
 {
     public override void OnInspectorGUI() {
            base.OnInspectorGUI();
         if (GUILayout.Button("Generate Grid")) {
-            ((Grid) target).GenerateGrid();
+            ((GridGenerator) target).GenerateGrid();
         }
     }
 }
