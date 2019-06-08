@@ -18,7 +18,7 @@ public class Item : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (!_collisionTiles.Any()) {
+        if (!_collisionTiles.Any() && !isDragging) {
             return;
         }
 
