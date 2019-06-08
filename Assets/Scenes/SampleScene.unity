@@ -234,6 +234,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &104506114
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +357,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &117594109
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +480,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &154398311
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,6 +603,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &215169369
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,6 +726,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &238900811
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,6 +849,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &247570783
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,6 +972,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &247594248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1095,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &309245972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1218,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &360845856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,6 +1341,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &371191025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1464,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &447213274
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,6 +1587,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &452224139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,6 +1710,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &468704089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,7 +1821,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1824,21 +1836,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205096b46773447bc9c4cb8fd51dedb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileEnable: {r: 0, g: 1, b: 0, a: 1}
-  tileOccupied: {r: 1, g: 0, b: 0, a: 1}
-  Occupied: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2017,6 +2014,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &731125549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,6 +2137,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &751348528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,6 +2260,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &781047038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2383,6 +2383,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &793338023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2505,6 +2506,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &805635399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2627,6 +2629,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &839226566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2749,6 +2752,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &941961280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,6 +2875,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1000802689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2881,6 +2886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1000802690}
   - component: {fileID: 1000802691}
+  - component: {fileID: 1000802692}
   m_Layer: 0
   m_Name: Tile(Clone)
   m_TagString: Untagged
@@ -2896,7 +2902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000802689}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.56, y: 0, z: 0}
+  m_LocalPosition: {x: 1.2799997, y: 0.63999987, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1820634532}
@@ -2940,7 +2946,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96ef73665a8c149488123f877d6f78a1, type: 3}
-  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 1}
+  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 0.69803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2950,6 +2956,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1000802692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000802689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e50bdee3b0ec4d4cba91e15103d7bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1019832349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,6 +2978,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1019832350}
   - component: {fileID: 1019832351}
+  - component: {fileID: 1019832352}
   m_Layer: 0
   m_Name: Tile(Clone)
   m_TagString: Untagged
@@ -2975,7 +2994,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019832349}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.28, y: -1.28, z: 0}
+  m_LocalPosition: {x: 0, y: -0.64000034, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1820634532}
@@ -3019,7 +3038,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96ef73665a8c149488123f877d6f78a1, type: 3}
-  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 1}
+  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 0.69803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3029,6 +3048,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1019832352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019832349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e50bdee3b0ec4d4cba91e15103d7bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1085440819
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,6 +3182,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1169576048
 GameObject:
   m_ObjectHideFlags: 0
@@ -3161,6 +3193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1169576049}
   - component: {fileID: 1169576050}
+  - component: {fileID: 1169576051}
   m_Layer: 0
   m_Name: Tile(Clone)
   m_TagString: Untagged
@@ -3176,7 +3209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169576048}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.56, y: -1.28, z: 0}
+  m_LocalPosition: {x: 1.2799997, y: -0.64000034, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1820634532}
@@ -3220,7 +3253,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96ef73665a8c149488123f877d6f78a1, type: 3}
-  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 1}
+  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 0.69803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3230,6 +3263,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1169576051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169576048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e50bdee3b0ec4d4cba91e15103d7bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1186574610
 GameObject:
   m_ObjectHideFlags: 0
@@ -3352,6 +3397,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1407001432
 GameObject:
   m_ObjectHideFlags: 0
@@ -3474,6 +3520,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1424716782
 GameObject:
   m_ObjectHideFlags: 0
@@ -3596,6 +3643,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1437345822
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,6 +3766,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1438538644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3840,6 +3889,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1451905768
 GameObject:
   m_ObjectHideFlags: 0
@@ -3962,6 +4012,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1472095876
 GameObject:
   m_ObjectHideFlags: 0
@@ -4084,6 +4135,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1496827817
 GameObject:
   m_ObjectHideFlags: 0
@@ -4206,6 +4258,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1520966823
 GameObject:
   m_ObjectHideFlags: 0
@@ -4328,6 +4381,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1526188910
 GameObject:
   m_ObjectHideFlags: 0
@@ -4450,6 +4504,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1527403939
 GameObject:
   m_ObjectHideFlags: 0
@@ -4572,6 +4627,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1529857859
 GameObject:
   m_ObjectHideFlags: 0
@@ -4582,6 +4638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1529857860}
   - component: {fileID: 1529857861}
+  - component: {fileID: 1529857862}
   m_Layer: 0
   m_Name: Tile(Clone)
   m_TagString: Untagged
@@ -4597,7 +4654,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529857859}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.28, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.63999987, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1820634532}
@@ -4641,7 +4698,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96ef73665a8c149488123f877d6f78a1, type: 3}
-  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 1}
+  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 0.69803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4651,6 +4708,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1529857862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529857859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e50bdee3b0ec4d4cba91e15103d7bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1536447003
 GameObject:
   m_ObjectHideFlags: 0
@@ -4773,6 +4842,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1557535207
 GameObject:
   m_ObjectHideFlags: 0
@@ -4783,6 +4853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1557535208}
   - component: {fileID: 1557535209}
+  - component: {fileID: 1557535210}
   m_Layer: 0
   m_Name: Tile(Clone)
   m_TagString: Untagged
@@ -4798,7 +4869,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557535207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.2800002, y: 0.63999987, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1820634532}
@@ -4842,7 +4913,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96ef73665a8c149488123f877d6f78a1, type: 3}
-  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 1}
+  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 0.69803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4852,6 +4923,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1557535210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557535207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e50bdee3b0ec4d4cba91e15103d7bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1558150764
 GameObject:
   m_ObjectHideFlags: 0
@@ -4974,6 +5057,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1584575288
 GameObject:
   m_ObjectHideFlags: 0
@@ -5096,6 +5180,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1750619653
 GameObject:
   m_ObjectHideFlags: 0
@@ -5218,6 +5303,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1776212108
 GameObject:
   m_ObjectHideFlags: 0
@@ -5340,6 +5426,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1820634530
 GameObject:
   m_ObjectHideFlags: 0
@@ -5349,9 +5436,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1820634532}
-  - component: {fileID: 1820634531}
-  - component: {fileID: 1820634533}
   - component: {fileID: 1820634534}
+  - component: {fileID: 1820634533}
+  - component: {fileID: 1820634531}
   m_Layer: 0
   m_Name: Macbook
   m_TagString: Untagged
@@ -5359,53 +5446,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1820634531
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820634530}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 1.2800962, y: -0.63923514}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.829405, y: 2.5523462}
-  m_EdgeRadius: 0
---- !u!4 &1820634532
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820634530}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.19, y: -4.28, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1557535208}
-  - {fileID: 1529857860}
-  - {fileID: 1000802690}
-  - {fileID: 1889120738}
-  - {fileID: 1019832350}
-  - {fileID: 1169576049}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1820634533
+--- !u!50 &1820634531
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -5426,6 +5467,52 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!4 &1820634532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820634530}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.4700003, y: -4.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1557535208}
+  - {fileID: 1529857860}
+  - {fileID: 1000802690}
+  - {fileID: 1889120738}
+  - {fileID: 1019832350}
+  - {fileID: 1169576049}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1820634533
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820634530}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &1820634534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5439,20 +5526,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemNumberOfTiles: 6
-  touchingTilesDistance:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  closestTiles:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _innerBlocks:
+  - {fileID: 1557535210}
+  - {fileID: 1529857862}
+  - {fileID: 1000802692}
+  - {fileID: 1889120740}
+  - {fileID: 1019832352}
+  - {fileID: 1169576051}
 --- !u!1 &1822742681
 GameObject:
   m_ObjectHideFlags: 0
@@ -5575,6 +5655,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1885696822
 GameObject:
   m_ObjectHideFlags: 0
@@ -5697,6 +5778,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1889120737
 GameObject:
   m_ObjectHideFlags: 0
@@ -5707,6 +5789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1889120738}
   - component: {fileID: 1889120739}
+  - component: {fileID: 1889120740}
   m_Layer: 0
   m_Name: Tile(Clone)
   m_TagString: Untagged
@@ -5722,7 +5805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889120737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.28, z: 0}
+  m_LocalPosition: {x: -1.2800002, y: -0.64000034, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1820634532}
@@ -5766,7 +5849,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 96ef73665a8c149488123f877d6f78a1, type: 3}
-  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 1}
+  m_Color: {r: 0.8409033, g: 0.9528302, b: 0.33708617, a: 0.69803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5776,6 +5859,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1889120740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889120737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e50bdee3b0ec4d4cba91e15103d7bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1889552375
 GameObject:
   m_ObjectHideFlags: 0
@@ -5898,6 +5993,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1920408377
 GameObject:
   m_ObjectHideFlags: 0
@@ -6020,6 +6116,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1983440480
 GameObject:
   m_ObjectHideFlags: 0
@@ -6142,6 +6239,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &1998213169
 GameObject:
   m_ObjectHideFlags: 0
@@ -6264,6 +6362,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &2018867492
 GameObject:
   m_ObjectHideFlags: 0
@@ -6386,6 +6485,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &2027568423
 GameObject:
   m_ObjectHideFlags: 0
@@ -6508,6 +6608,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &2067421107
 GameObject:
   m_ObjectHideFlags: 0
@@ -6630,6 +6731,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &2082919708
 GameObject:
   m_ObjectHideFlags: 0
@@ -6752,6 +6854,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &2101649925
 GameObject:
   m_ObjectHideFlags: 0
@@ -6874,6 +6977,7 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
 --- !u!1 &2139322489
 GameObject:
   m_ObjectHideFlags: 0
@@ -6996,3 +7100,4 @@ MonoBehaviour:
   tileEnable: {r: 0, g: 1, b: 0, a: 1}
   tileOccupied: {r: 1, g: 0, b: 0, a: 1}
   Occupied: 0
+  Distance: 0
