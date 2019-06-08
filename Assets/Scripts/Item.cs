@@ -9,7 +9,7 @@ public class Item : MonoBehaviour {
     private List<Tile> _collisionTiles = new List<Tile>();
     private Collider2D itemCollider;
     public List<Block> _innerBlocks = new List<Block>();
-    private List<Tile> newList = new List<Tile>();
+    public List<Tile> newList = new List<Tile>();
 
     private void Awake() {
         itemCollider = GetComponent<BoxCollider2D>();
@@ -30,6 +30,8 @@ public class Item : MonoBehaviour {
             if (!newList.Contains(collisionTile))
                 collisionTile.ResetOriginalColor();
         }
+
+        newList = newList.Distinct().ToList();
 
         foreach (var tile in newList) {
             tile.ShowGreenFeedback();
@@ -63,7 +65,7 @@ public class Item : MonoBehaviour {
         }
     }
 
-    private void OnMouseUp() {
+    private void OnMouseUp() {        
         if (newList.Count == itemNumberOfTiles) {
             var totalX = 0f;
             var totalY = 0f;
@@ -77,7 +79,5 @@ public class Item : MonoBehaviour {
 
             transform.position = new Vector3(centerX, centerY, transform.position.z);
         }
-        
-        newList = new List<Tile>();
     }
 }
