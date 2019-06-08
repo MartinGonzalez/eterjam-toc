@@ -9,16 +9,16 @@ public class Item : MonoBehaviour {
     private bool wasSnapped = false;
 
     private List<Tile> _collisionTiles = new List<Tile>();
-    private Collider2D itemCollider;
+    private Collider itemCollider;
     public List<Block> _innerBlocks = new List<Block>();
     public List<Tile> newList = new List<Tile>();
 
     private void Awake() {
-        itemCollider = GetComponent<BoxCollider2D>();
+        itemCollider = GetComponent<Collider>();
     }
 
     private void FixedUpdate() {
-        if (!_collisionTiles.Any() && !isDragging) {
+        if (!_collisionTiles.Any() || !isDragging) {
             return;
         }
 
@@ -36,7 +36,7 @@ public class Item : MonoBehaviour {
         newList = newList.Distinct().ToList();
 
         foreach (var tile in newList) {
-            if(isDragging)
+            if (!tile.Occupied)
                 tile.ShowGreenFeedback();
         }
     }
@@ -45,9 +45,7 @@ public class Item : MonoBehaviour {
         var tile = other.GetComponent<Tile>();
         if (tile == null) return;
 
-        if (!tile.Occupied) {
-            _collisionTiles.Add(tile);
-        }
+        _collisionTiles.Add(tile);
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
@@ -59,14 +57,15 @@ public class Item : MonoBehaviour {
     }
 
 
+    private bool _snapped;
+
     private void OnMouseDrag() {
         isDragging = true;
-        if (wasSnapped)
-        {
+        if (wasSnapped) {
             wasSnapped = false;
-            GameManager.instance.Snaps += 1;
+            GameManager.Instance.Snaps += 1;
         }
-        
+
 
         this.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(transform.position.x, transform.position.y, -1);
@@ -75,16 +74,20 @@ public class Item : MonoBehaviour {
             transform.Rotate(new Vector3(0, 0, 90));
         }
 
-        foreach (var tile in newList)
-        {
-            tile.Occupied = false;
+        if (_snapped) {
+            foreach (var tile in newList) {
+                tile.Occupied = false;
+            }
+
+            _snapped = false;
         }
     }
 
     private void OnMouseUp() {
         isDragging = false;
 
-        if (newList.Count == itemNumberOfTiles) {
+        if (newList.Count == itemNumberOfTiles && newList.All(tile => tile.Occupied == false)) {
+            _snapped = true;
             var totalX = 0f;
             var totalY = 0f;
             foreach (var tile in newList) {
@@ -96,14 +99,17 @@ public class Item : MonoBehaviour {
             var centerY = totalY / itemNumberOfTiles;
 
             transform.position = new Vector3(centerX, centerY, transform.position.z);
-            GameManager.instance.Snaps -= 1;
+            GameManager.Instance.Snaps -= 1;
             wasSnapped = true;
 
-            foreach (var tile in newList)
-            {
+            foreach (var tile in newList) {
                 tile.Occupied = true;
                 tile.ResetOriginalColor();
             }
+        }
+
+        foreach (var tile in newList) {
+            tile.ResetOriginalColor();
         }
     }
 }
