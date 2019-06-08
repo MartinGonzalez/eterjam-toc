@@ -23,11 +23,12 @@ public class Item : MonoBehaviour {
         
         foreach (var innerBlock in _innerBlocks) {
             newList.Add(innerBlock.GetClosestTileIn(_collisionTiles));
-        }                
+        }
 
-//        foreach (var tile in newList.Except(_collisionTiles)) {
-//            tile.ResetOriginalColor();
-//        }
+        foreach (var collisionTile in _collisionTiles) {
+            if(!newList.Contains(collisionTile))
+                collisionTile.ResetOriginalColor();
+        }
 
         foreach (var tile in newList) {
             tile.ShowGreenFeedback();
@@ -35,12 +36,10 @@ public class Item : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Collision");
         var tile = other.GetComponent<Tile>();
         if (tile == null) return;
 
         if (!tile.Occupied) {
-//            tile.ShowGreenFeedback();
             _collisionTiles.Add(tile);
         }
     }
