@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour {
     public int itemNumberOfTiles = 1;
+    private bool isDragging = false;
 
     private List<Tile> _collisionTiles = new List<Tile>();
     private Collider2D itemCollider;
@@ -34,7 +35,8 @@ public class Item : MonoBehaviour {
         newList = newList.Distinct().ToList();
 
         foreach (var tile in newList) {
-            tile.ShowGreenFeedback();
+            if(isDragging)
+                tile.ShowGreenFeedback();
         }
     }
 
@@ -57,15 +59,24 @@ public class Item : MonoBehaviour {
 
 
     private void OnMouseDrag() {
+        isDragging = true;
+
         this.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(transform.position.x, transform.position.y, -1);
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             transform.Rotate(new Vector3(0, 0, 90));
         }
+
+        foreach (var tile in newList)
+        {
+            tile.Occupied = false;
+        }
     }
 
-    private void OnMouseUp() {        
+    private void OnMouseUp() {
+        isDragging = false;
+
         if (newList.Count == itemNumberOfTiles) {
             var totalX = 0f;
             var totalY = 0f;
@@ -78,6 +89,12 @@ public class Item : MonoBehaviour {
             var centerY = totalY / itemNumberOfTiles;
 
             transform.position = new Vector3(centerX, centerY, transform.position.z);
+
+            foreach (var tile in newList)
+            {
+                tile.Occupied = true;
+                tile.ResetOriginalColor();
+            }
         }
     }
 }
