@@ -32,20 +32,20 @@ public class GridGenerator : MonoBehaviour {
             posY -= spaceY;
         }
 
-        innerParent = new GameObject("Parent");
-        innerParent.transform.SetParent(transform);
-
+        innerParent = new GameObject("Parent");        
+        innerParent.transform.SetParent(transform);        
+        
         var totalX = 0f;
         var totalY = 0f;
         foreach (var tile in bla) {
-            totalX += tile.transform.position.x;
-            totalY += tile.transform.position.y;
+            totalX += tile.transform.localPosition.x;
+            totalY += tile.transform.localPosition.y;
         }
 
-        var centerX = totalX / tilesX * tilesY;
-        var centerY = totalY / tilesX * tilesY;
+        var centerX = totalX / (tilesX * tilesY);
+        var centerY = totalY / (tilesY * tilesX);
 
-        innerParent.transform.localPosition = new Vector3(centerX, centerY, innerParent.transform.localPosition.z);
+        innerParent.transform.localPosition = new Vector3(centerX, centerY);
         
         foreach (var tile in bla) {
             tile.transform.SetParent(innerParent.transform);
