@@ -9,12 +9,12 @@ public class Item : MonoBehaviour {
     private bool wasSnapped = false;
 
     private List<Tile> _collisionTiles = new List<Tile>();
-    private Collider2D itemCollider;
+    private Collider itemCollider;
     public List<Block> _innerBlocks = new List<Block>();
     public List<Tile> newList = new List<Tile>();
 
     private void Awake() {
-        itemCollider = GetComponent<BoxCollider2D>();
+        itemCollider = GetComponent<Collider>();
     }
 
     private void FixedUpdate() {
