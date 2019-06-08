@@ -9,8 +9,8 @@ public class LevelData : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.InitialSnaps = totalSnapsInLevel;
-        GameManager.instance.Snaps = totalSnapsInLevel;
-        GameManager.instance.levelDoneMessage = levelClearMessage;
+        GameManager.Instance.InitialSnaps = totalSnapsInLevel;
+        GameManager.Instance.Snaps = totalSnapsInLevel;
+        GameManager.Instance.levelDoneMessage = levelClearMessage;
     }
 }

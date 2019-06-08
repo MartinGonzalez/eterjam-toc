@@ -2,31 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
-    public static GameManager instance = null;
+public class GameManager : MonoBehaviour {
+    private static GameManager instance = null;
 
     private int totalSnaps;
     private int initialSnaps;
     [HideInInspector] public GameObject levelDoneMessage;
 
-    // Verdadero número que lleva el conteo
-    public int Snaps
-    {
-        get
-        {
-            return totalSnaps;
+
+    public static GameManager Instance {
+        get {
+            if (instance == null) {
+                var go = new GameObject("Game Manager");
+                var instance = go.AddComponent<GameManager>();
+            }
+
+            return instance;
         }
-        set
-        {
+    }
+
+    // Verdadero número que lleva el conteo
+    public int Snaps {
+        get { return totalSnaps; }
+        set {
             totalSnaps = value;
 
-            if (totalSnaps < 0)
-            {
+            if (totalSnaps < 0) {
                 totalSnaps = 0;
             }
-            if (totalSnaps > initialSnaps)
-            {
+
+            if (totalSnaps > initialSnaps) {
                 totalSnaps = initialSnaps;
             }
         }
@@ -34,26 +39,19 @@ public class GameManager : MonoBehaviour
 
     // Para conservar una referencia del número inicial en el nivel, este valor solo se modifica
     // al comienzo
-    public int InitialSnaps
-    {
-        get
-        {
-            return initialSnaps;
-        }
-        set
-        {
+    public int InitialSnaps {
+        get { return initialSnaps; }
+        set {
             initialSnaps = value;
 
-            if (initialSnaps < 0)
-            {
+            if (initialSnaps < 0) {
                 initialSnaps = 0;
             }
         }
     }
 
     // Start is called before the first frame update
-    void Awake()
-    {
+    void Awake() {
         // Singleton pattern
         if (instance == null)
             instance = this;
@@ -62,20 +60,17 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        if(levelDoneMessage != null)
+        if (levelDoneMessage != null)
             levelDoneMessage.SetActive(false);
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         CheckGameOver();
     }
 
-    public void CheckGameOver()
-    {
-        if (totalSnaps <= 0)
-        {
+    public void CheckGameOver() {
+        if (totalSnaps <= 0) {
             //Debug.Log("Level Won!");
             levelDoneMessage.SetActive(true);
         }
