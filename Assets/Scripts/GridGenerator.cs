@@ -21,6 +21,7 @@ public class GridGenerator : MonoBehaviour {
                 var tile = Instantiate(tilePrefab, transform);
                 tile.transform.localPosition = new Vector3(posX, posY);
                 tile.name = j + "_" + i;
+                tile.AddComponent<Tile>();
                 bla.Add(tile.transform);
                 posX += spaceX;
             }
@@ -42,7 +43,7 @@ public class GridGenerator : MonoBehaviour {
         var centerX = totalX / tilesX * tilesY;
         var centerY = totalY / tilesX * tilesY;
 
-        innerParent.transform.position = new Vector3(centerX, centerY, transform.position.z);
+        innerParent.transform.localPosition = new Vector3(centerX, centerY, transform.position.z);
         
         foreach (var tile in bla) {
             tile.transform.SetParent(innerParent.transform);
