@@ -6,6 +6,7 @@ using UnityEngine;
 public class Item : MonoBehaviour {
     public int itemNumberOfTiles = 1;
     private bool isDragging = false;
+    private bool wasSnapped = false;
 
     private List<Tile> _collisionTiles = new List<Tile>();
     private Collider2D itemCollider;
@@ -60,6 +61,12 @@ public class Item : MonoBehaviour {
 
     private void OnMouseDrag() {
         isDragging = true;
+        if (wasSnapped)
+        {
+            wasSnapped = false;
+            GameManager.instance.Snaps += 1;
+        }
+        
 
         this.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(transform.position.x, transform.position.y, -1);
@@ -90,6 +97,7 @@ public class Item : MonoBehaviour {
 
             transform.position = new Vector3(centerX, centerY, transform.position.z);
             GameManager.instance.Snaps -= 1;
+            wasSnapped = true;
 
             foreach (var tile in newList)
             {

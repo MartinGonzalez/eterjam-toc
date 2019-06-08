@@ -7,8 +7,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     private int totalSnaps;
+    private int initialSnaps;
     [HideInInspector] public GameObject levelDoneMessage;
 
+    // Verdadero número que lleva el conteo
     public int Snaps
     {
         get
@@ -22,6 +24,29 @@ public class GameManager : MonoBehaviour
             if (totalSnaps < 0)
             {
                 totalSnaps = 0;
+            }
+            if (totalSnaps > initialSnaps)
+            {
+                totalSnaps = initialSnaps;
+            }
+        }
+    }
+
+    // Para conservar una referencia del número inicial en el nivel, este valor solo se modifica
+    // al comienzo
+    public int InitialSnaps
+    {
+        get
+        {
+            return initialSnaps;
+        }
+        set
+        {
+            initialSnaps = value;
+
+            if (initialSnaps < 0)
+            {
+                initialSnaps = 0;
             }
         }
     }
