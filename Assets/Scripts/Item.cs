@@ -89,6 +89,7 @@ public class Item : MonoBehaviour {
             var centerY = totalY / itemNumberOfTiles;
 
             transform.position = new Vector3(centerX, centerY, transform.position.z);
+            GameManager.instance.Snaps -= 1;
 
             foreach (var tile in newList)
             {
