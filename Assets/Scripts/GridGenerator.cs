@@ -22,6 +22,8 @@ public class GridGenerator : MonoBehaviour {
                 tile.transform.localPosition = new Vector3(posX, posY);
                 tile.name = j + "_" + i;
                 tile.AddComponent<Tile>();
+                var collider = tile.AddComponent<BoxCollider2D>();
+                collider.isTrigger = true;
                 bla.Add(tile.transform);
                 posX += spaceX;
             }
@@ -43,11 +45,13 @@ public class GridGenerator : MonoBehaviour {
         var centerX = totalX / tilesX * tilesY;
         var centerY = totalY / tilesX * tilesY;
 
-        innerParent.transform.localPosition = new Vector3(centerX, centerY, transform.position.z);
+        innerParent.transform.localPosition = new Vector3(centerX, centerY, innerParent.transform.localPosition.z);
         
         foreach (var tile in bla) {
             tile.transform.SetParent(innerParent.transform);
         }
+        
+        innerParent.transform.localPosition = Vector3.zero;
     }
 
     private void DeleteChildren() {
