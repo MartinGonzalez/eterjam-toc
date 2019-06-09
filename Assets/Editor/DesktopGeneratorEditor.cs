@@ -26,7 +26,7 @@ public class DesktopGeneratorEditor : EditorWindow {
         GUI.enabled = true;
 
         GUI.enabled = _addingItem;
-        if (GUILayout.Button("Save Item")) { 
+        if (GUILayout.Button("Save Item")) {
             _addingItem = false;
             _items.Add(new ItemEditor(_currentCoordintes));
             _currentCoordintes = new List<Coordinates>();
@@ -37,17 +37,19 @@ public class DesktopGeneratorEditor : EditorWindow {
         if (GUILayout.Button("Generate Grid")) {
             var grid = FindObjectOfType<GridGenerator>();
             var itemGen = FindObjectOfType<ItemGenerator>();
+            var levelGen = FindObjectOfType<LevelGenerator>();
 
             grid.ShowTilesIn(_items);
             itemGen.GenerateItems(_items);
+            levelGen.CreateLevelData(_items.Count);
         }
-        
+
         if (GUILayout.Button("Clear Grid")) {
             _items = new List<ItemEditor>();
             matrix = new bool[11, 5];
-            _currentCoordintes = new List<Coordinates>();            
+            _currentCoordintes = new List<Coordinates>();
         }
-        
+
         GUI.enabled = true;
 
         if (GUILayout.Button("Debug List")) {
