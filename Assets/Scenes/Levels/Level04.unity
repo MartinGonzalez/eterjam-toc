@@ -726,7 +726,27 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 2.61
       objectReference: {fileID: 0}
+    - target: {fileID: 3042746977382835137, guid: 9a87b4fc98c6a4361a3bab4c6cbe43b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042746977753381666, guid: 9a87b4fc98c6a4361a3bab4c6cbe43b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042746976448657847, guid: 9a87b4fc98c6a4361a3bab4c6cbe43b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3042746976545245387, guid: 9a87b4fc98c6a4361a3bab4c6cbe43b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042746976871657701, guid: 9a87b4fc98c6a4361a3bab4c6cbe43b4,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -737,26 +757,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3042746977953312576, guid: 9a87b4fc98c6a4361a3bab4c6cbe43b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3042746976871657701, guid: 9a87b4fc98c6a4361a3bab4c6cbe43b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3042746976448657847, guid: 9a87b4fc98c6a4361a3bab4c6cbe43b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3042746977382835137, guid: 9a87b4fc98c6a4361a3bab4c6cbe43b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3042746977753381666, guid: 9a87b4fc98c6a4361a3bab4c6cbe43b4,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1585,7 +1585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Siguiente Nivel
 --- !u!222 &518665217
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2437,7 +2437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1188303295
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2674,7 +2674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1311961330
 MonoBehaviour:
   m_ObjectHideFlags: 0
