@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
     private int totalSnaps;
     private int initialSnaps;
-    [HideInInspector] public GameObject levelDoneMessage;
+    public GameObject levelDoneMessage;
 
 
     public static GameManager Instance {
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour {
     public void CheckGameOver() {
         if (totalSnaps <= 0) {
             //Debug.Log("Level Won!");
-            //levelDoneMessage.SetActive(true);
+            levelDoneMessage.SetActive(true);
         }
     }
 }
