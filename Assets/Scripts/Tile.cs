@@ -32,4 +32,12 @@ public class Tile : MonoBehaviour {
     {
         _spriteRenderer.color = tileOccupied;
     }
+
+    public void Show() {
+        gameObject.SetActive(true);
+    }
+    
+    public void Hide() {
+        gameObject.SetActive(false);
+    }
 }

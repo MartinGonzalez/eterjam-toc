@@ -7,13 +7,13 @@ public class GridGenerator : MonoBehaviour {
     public int tilesX = 10;
     public int tilesY = 10;
     public GameObject tilePrefab;
-    private List<Transform> bla = new List<Transform>();
+    [SerializeField] private List<Tile> tiles = new List<Tile>();
     private GameObject innerParent;
 
     public void GenerateGrid() {
         DeleteChildren();
-        bla = new List<Transform>();
-
+        tiles = new List<Tile>();
+        
         var posX = 0f;
         var posY = 0f;
         for (var i = 0; i < tilesY; i++) {
@@ -21,10 +21,10 @@ public class GridGenerator : MonoBehaviour {
                 var tile = Instantiate(tilePrefab, transform);
                 tile.transform.localPosition = new Vector3(posX, posY);
                 tile.name = j + "_" + i;
-                tile.AddComponent<Tile>();
+                var t = tile.AddComponent<Tile>();
                 var collider = tile.AddComponent<BoxCollider2D>();
                 collider.isTrigger = true;
-                bla.Add(tile.transform);
+                tiles.Add(t);
                 posX += spaceX;
             }
 
@@ -37,7 +37,7 @@ public class GridGenerator : MonoBehaviour {
         
         var totalX = 0f;
         var totalY = 0f;
-        foreach (var tile in bla) {
+        foreach (var tile in tiles) {
             totalX += tile.transform.localPosition.x;
             totalY += tile.transform.localPosition.y;
         }
@@ -47,7 +47,7 @@ public class GridGenerator : MonoBehaviour {
 
         innerParent.transform.localPosition = new Vector3(centerX, centerY);
         
-        foreach (var tile in bla) {
+        foreach (var tile in tiles) {
             tile.transform.SetParent(innerParent.transform);
         }
         
@@ -56,5 +56,18 @@ public class GridGenerator : MonoBehaviour {
 
     private void DeleteChildren() {
         DestroyImmediate(innerParent);
+    }
+
+    public void ShowTilesIn(List<ItemEditor> items) {
+        foreach (var tile in tiles) {
+            tile.Hide();
+        }
+        
+        foreach (var item in items) {
+            foreach (var coordinate in item.Coordinates) {
+                var index = coordinate.Y * tilesX + coordinate.X;
+                tiles[index].Show();
+            }
+        }
     }
 }
