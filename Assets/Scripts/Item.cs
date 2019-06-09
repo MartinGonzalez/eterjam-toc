@@ -1,21 +1,39 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class Item : MonoBehaviour {
+    public int defaultItemColumns = 4;
+
     private int itemNumberOfTiles = 1;
     private bool isDragging = false;
     private bool wasSnapped = false;
 
     private List<Tile> _collisionTiles = new List<Tile>();
     private Collider itemCollider;
-    public List<Block> _innerBlocks = new List<Block>();
+    private List<Block> _activeBlocks = new List<Block>();
+    public List<Block> _totalBlocks = new List<Block>();
     public List<Tile> newList = new List<Tile>();
 
     private void Awake() {
         itemCollider = GetComponent<Collider>();
-        itemNumberOfTiles = _innerBlocks.Count;
+        itemNumberOfTiles = _activeBlocks.Count;
+    }
+
+    internal void PrepareItem(List<Coordinates> coordenadasPrefab)
+    {
+        foreach (var item in coordenadasPrefab)
+        {
+            int activeIndex = (item.Y * defaultItemColumns) + item.X;
+            _activeBlocks.Add(_totalBlocks[activeIndex]);
+        }
+
+        foreach (var item in _activeBlocks)
+        {
+            item.gameObject.SetActive(true);
+        }
     }
 
     private void FixedUpdate() {
@@ -25,7 +43,7 @@ public class Item : MonoBehaviour {
 
         newList = new List<Tile>();
 
-        foreach (var innerBlock in _innerBlocks) {
+        foreach (var innerBlock in _activeBlocks) {
             newList.Add(innerBlock.GetClosestTileIn(_collisionTiles));
         }
 

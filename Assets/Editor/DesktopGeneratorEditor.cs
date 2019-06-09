@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.iOS;
 using UnityEngine;
 
 public class DesktopGeneratorEditor : EditorWindow {
@@ -37,10 +36,10 @@ public class DesktopGeneratorEditor : EditorWindow {
         GUI.enabled = _items.Count > 0;
         if (GUILayout.Button("Generate Grid")) {
             var grid = FindObjectOfType<GridGenerator>();
+            var itemGen = FindObjectOfType<ItemGenerator>();
+
             grid.ShowTilesIn(_items);
-            foreach (var item in _items) {
-                item.ResetCoordinates();
-            }
+            itemGen.GenerateItems(_items);
         }
         
         if (GUILayout.Button("Clear Grid")) {
