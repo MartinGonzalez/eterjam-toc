@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
+using UnityEditor.iOS;
 using UnityEngine;
 
 public class DesktopGeneratorEditor : EditorWindow {
@@ -25,7 +27,7 @@ public class DesktopGeneratorEditor : EditorWindow {
         GUI.enabled = true;
 
         GUI.enabled = _addingItem;
-        if (GUILayout.Button("Save Item")) {
+        if (GUILayout.Button("Save Item")) { 
             _addingItem = false;
             _items.Add(new ItemEditor(_currentCoordintes));
             _currentCoordintes = new List<Coordinates>();
@@ -36,6 +38,9 @@ public class DesktopGeneratorEditor : EditorWindow {
         if (GUILayout.Button("Generate Grid")) {
             var grid = FindObjectOfType<GridGenerator>();
             grid.ShowTilesIn(_items);
+            foreach (var item in _items) {
+                item.ResetCoordinates();
+            }
         }
         
         if (GUILayout.Button("Clear Grid")) {
