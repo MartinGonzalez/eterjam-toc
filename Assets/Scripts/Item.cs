@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -12,28 +10,31 @@ public class Item : MonoBehaviour {
     private bool wasSnapped = false;
 
     private List<Tile> _collisionTiles = new List<Tile>();
-    private Collider itemCollider;
-    private List<Block> _activeBlocks = new List<Block>();
+    [SerializeField] private List<Block> _activeBlocks = new List<Block>();
     public List<Block> _totalBlocks = new List<Block>();
     public List<Tile> newList = new List<Tile>();
 
     private void Awake() {
-        itemCollider = GetComponent<Collider>();
         itemNumberOfTiles = _activeBlocks.Count;
     }
 
-    internal void PrepareItem(List<Coordinates> coordenadasPrefab)
-    {
-        foreach (var item in coordenadasPrefab)
-        {
+    internal void PrepareItem(List<Coordinates> coordenadasPrefab) {
+        foreach (var item in coordenadasPrefab) {
             int activeIndex = (item.Y * defaultItemColumns) + item.X;
             _activeBlocks.Add(_totalBlocks[activeIndex]);
         }
 
-        foreach (var item in _activeBlocks)
-        {
+        foreach (var item in _activeBlocks) {
             item.gameObject.SetActive(true);
         }
+
+        for (int i = 0; i < _totalBlocks.Count; i++) {
+            if (!_activeBlocks.Contains(_totalBlocks[i])) {
+                DestroyImmediate(_totalBlocks[i].gameObject);
+            }                
+        }
+        
+        transform.CenterOnChildred(_activeBlocks.Select(a => a.transform).ToList());
     }
 
     private void FixedUpdate() {
@@ -75,8 +76,8 @@ public class Item : MonoBehaviour {
 
         tile.ResetOriginalColor();
         _collisionTiles.Remove(tile);
-        
-        if(_collisionTiles.Count == 0)
+
+        if (_collisionTiles.Count == 0)
             newList.Clear();
     }
 
@@ -85,11 +86,11 @@ public class Item : MonoBehaviour {
 
     private void OnMouseDrag() {
         isDragging = true;
+        
         if (wasSnapped) {
             wasSnapped = false;
             GameManager.Instance.Snaps += 1;
         }
-
 
         this.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(transform.position.x, transform.position.y, -1);
@@ -122,7 +123,7 @@ public class Item : MonoBehaviour {
             var centerX = totalX / itemNumberOfTiles;
             var centerY = totalY / itemNumberOfTiles;
 
-            transform.position = new Vector3(centerX, centerY, transform.position.z);
+            transform.position = new Vector3(centerX, centerY, -1);
             GameManager.Instance.Snaps -= 1;
             wasSnapped = true;
 
@@ -135,5 +136,21 @@ public class Item : MonoBehaviour {
         foreach (var tile in newList) {
             tile.ResetOriginalColor();
         }
+    }
+}
+
+public static class GO_Extensions {
+    public static void CenterOnChildred(this Transform aParent, List<Transform> children) {
+        var childs = children;
+        var pos = Vector3.zero;
+        foreach (var C in childs) {
+            pos += C.position;
+            C.parent = null;
+        }
+
+        pos /= childs.Count;
+        aParent.position = pos;
+        foreach (var C in childs)
+            C.parent = aParent;
     }
 }
