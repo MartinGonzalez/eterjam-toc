@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 public class Item : MonoBehaviour {
-    public int itemNumberOfTiles = 1;
+    private int itemNumberOfTiles = 1;
     private bool isDragging = false;
     private bool wasSnapped = false;
 
@@ -15,6 +15,7 @@ public class Item : MonoBehaviour {
 
     private void Awake() {
         itemCollider = GetComponent<Collider>();
+        itemNumberOfTiles = _innerBlocks.Count;
     }
 
     private void FixedUpdate() {
@@ -38,6 +39,8 @@ public class Item : MonoBehaviour {
         foreach (var tile in newList) {
             if (!tile.Occupied)
                 tile.ShowGreenFeedback();
+            else
+                tile.ShowRedFeedback();
         }
     }
 
@@ -54,6 +57,9 @@ public class Item : MonoBehaviour {
 
         tile.ResetOriginalColor();
         _collisionTiles.Remove(tile);
+        
+        if(_collisionTiles.Count == 0)
+            newList.Clear();
     }
 
 

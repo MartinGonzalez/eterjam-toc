@@ -11,6 +11,7 @@ public class Tile : MonoBehaviour {
     
     private void Awake() {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        //_spriteRenderer.color = new Color(0,0,0,0);
         originalColor = _spriteRenderer.color;
     }
 
@@ -25,5 +26,10 @@ public class Tile : MonoBehaviour {
     public float GetDistance(Vector3 transformPosition) {
         Distance = Vector3.Distance(transform.position, transformPosition);
         return Distance;
+    }
+
+    public void ShowRedFeedback()
+    {
+        _spriteRenderer.color = tileOccupied;
     }
 }
